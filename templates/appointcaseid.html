@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+<font color="green">
+    <table><tr>
+            <form action="/savecasedetails/" method="post">
+            {% csrf_token %}
+            <td width="200">{% include "sideindex.html" %}</td>
+            <td width="1000"><table align="center" border="1">
+                <tr><th>agent id</th><th><input type="number" name="agent id"></th></tr>
+                 <tr><th>case id</th><th><input type="number" name="case id"></th></tr>
+                <tr> <th>case name</th><th><input type="text" name="name"></th></tr>
+                <tr><th>evidence</th><th><input type="text" name="evidence"></th></tr>
+                <tr><th>status</th><th><input type="text" name="status"></th></tr>
+                <tr><th colspan="5"><input type="submit" value="assign"></th></tr>
+                </table>
+            </td>
+                <h1>{{ message }}</h1>
+            </form>
+        </tr>
+
+</table>
+</font>
+</body>
+</html>
